@@ -7,9 +7,10 @@ class Api::V1::SubtopicsController < ApplicationController
   end
 
 
+
   def show
     @subtopic = Subtopic.find(params[:id])
-    if @subtopics
+    if @subtopic
       render json: @subtopic
     else
       render json: {errors: @subtopic.errors.full_messages}

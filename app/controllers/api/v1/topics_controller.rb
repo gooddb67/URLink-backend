@@ -6,6 +6,12 @@ class Api::V1::TopicsController < ApplicationController
   end
 
   def show
+    @topic = Topic.find(params[:id])
+    if @topic
+      render json: @topic
+    else
+      render json: {errors: @topic.errors.full_messages}
+    end
   end
 
 end

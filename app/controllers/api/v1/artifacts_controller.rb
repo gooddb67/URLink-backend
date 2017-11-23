@@ -8,6 +8,15 @@ class Api::V1::ArtifactsController < ApplicationController
     render json: @artifacts
   end
 
+  def show
+    @artifact = Subtopic.find(params[:id])
+    if @artifact
+      render json: @artifact
+    else
+      render json: {errors: @artifact.errors.full_messages}
+    end
+  end
+
   def create
     @topic = Topic.find(params[:id])
     @subtopic = Subtopic.find(params[:id])
