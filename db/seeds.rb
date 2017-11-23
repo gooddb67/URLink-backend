@@ -32,8 +32,8 @@ objects = Subtopic.create(name: "Objects", topic_id: 2)
 es6_note = Note.create(content: "Arrow functions are great!", subtopic_id: 5)
 object_note = Note.create(content: "Iteration is fun!", subtopic_id: 7)
 
-fetch_video = Artifact.create(media: "video", url: "https://youtu.be/Oive66jrwBs", subtopic_id: 4)
-fetch_article = Artifact.create(media: "link", url: "https://davidwalsh.name/fetch", subtopic_id: 4)
-fetch_image = Artifact.create(media: "image", url: "http://jquery-plugins.net/image/plugin/fetch-windowfetch-javascript-polyfill.png", subtopic_id: 4)
+fetch_video = Artifact.create(media: "video", url: "https://youtu.be/Oive66jrwBs", subtopic_id: 4, topic_id: 2)
+fetch_article = Artifact.create(media: "link", url: "https://davidwalsh.name/fetch", subtopic_id: 4, topic_id: 2)
+fetch_image = Artifact.create(media: "image", url: "http://jquery-plugins.net/image/plugin/fetch-windowfetch-javascript-polyfill.png", subtopic_id: 4, topic_id: 2)
 
 fetch_video_comment = Comment.create(content: "need PostData for post requests", artifact_id: 1)
