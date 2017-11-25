@@ -10,6 +10,7 @@ class Api::V1::SubtopicsController < ApplicationController
 
   def show
     @subtopic = Subtopic.find(params[:id])
+
     if @subtopic
       render json: @subtopic
     else
