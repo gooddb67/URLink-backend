@@ -1,10 +1,11 @@
 class Api::V1::ArtifactsController < ApplicationController
 
   def index
-    @topic = Topic.find(params[:topic_id])
-    @subtopic = Subtopic.find(params[:subtopic_id])
-
-    @artifacts = Artifact.where(topic_id: @topic.id, subtopic_id: @subtopic.id)
+    # @topic = Topic.find(params[:topic_id])
+    # @subtopic = Subtopic.find(params[:subtopic_id])
+    #
+    # @artifacts = Artifact.where(topic_id: @topic.id, subtopic_id: @subtopic.id)
+    @artifacts = Artifact.all
     render json: @artifacts
   end
 

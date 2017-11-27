@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
+
+      resources :artifacts, only: [:index]
+
       resources :topics, only: [:index, :create, :show] do
         resources :subtopics, only: [:index, :create, :show, :update] do
           resources :artifacts, only: [:index, :create, :show, :update] do

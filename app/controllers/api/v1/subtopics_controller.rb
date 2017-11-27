@@ -6,6 +6,17 @@ class Api::V1::SubtopicsController < ApplicationController
     render json: @subtopics
   end
 
+  def create
+    @topic = Topic.find(params[:topic_id])
+    @subtopic = Subtopic.create(name: params[:name], topic_id: params[:topic_id])
+
+    if @subtopic.save
+      render json: @subtopic
+    else
+      render json: {errors: @subtopic.errors.full_messages}
+    end 
+  end
+
 
 
   def show
