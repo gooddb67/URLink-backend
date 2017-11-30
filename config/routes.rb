@@ -4,12 +4,13 @@ Rails.application.routes.draw do
 
       resources :artifacts, only: [:index]
 
-      resources :topics, only: [:index, :create, :show] do
+      resources :topics, only: [:index, :create, :show, :destroy] do
         resources :subtopics, only: [:index, :create, :show, :update] do
-          resources :artifacts, only: [:index, :create, :show, :update] do
-            resources :comments, only: [:index, :create]
-          end
+          resources :artifacts, only: [:index, :create, :show, :update]
         end
+      end
+      resources :artifacts, only: [:show, :index, :create, :update] do
+        resources :comments, only: [:index, :create, :show]
       end
     end
   end
