@@ -9,7 +9,7 @@ Rails.application.routes.draw do
           resources :artifacts, only: [:index, :create, :show, :update]
         end
       end
-      resources :artifacts, only: [:show, :index, :create, :update] do
+      resources :artifacts, only: [:show, :index, :create, :update, :destroy] do
         resources :comments, only: [:index, :create, :show]
       end
     end

@@ -30,6 +30,11 @@ class Api::V1::ArtifactsController < ApplicationController
     end
   end
 
+  def destroy
+    @artifact = Artifact.destroy(params[:id]).destroy
+    render json: @artifact
+  end
+
 
 
 end
