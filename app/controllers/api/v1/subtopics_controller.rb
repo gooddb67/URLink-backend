@@ -14,7 +14,7 @@ class Api::V1::SubtopicsController < ApplicationController
       render json: @subtopic
     else
       render json: {errors: @subtopic.errors.full_messages}
-    end 
+    end
   end
 
 
@@ -27,6 +27,11 @@ class Api::V1::SubtopicsController < ApplicationController
     else
       render json: {errors: @subtopic.errors.full_messages}
     end
+  end
+
+  def destroy
+    @subtopic = Subtopic.destroy(params[:id]).destroy
+    render json: @subtopic
   end
 
 end
