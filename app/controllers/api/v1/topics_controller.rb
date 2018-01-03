@@ -25,9 +25,8 @@ class Api::V1::TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:id])
-    @topic.destroy
-    render json: "Topic destroyed"
+    @topic = Topic.find(params[:id]).destroy
+    render json: @topic
   end
 
 end
