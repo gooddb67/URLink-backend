@@ -21,7 +21,7 @@ class Api::V1::ArtifactsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @subtopic = Subtopic.find(params[:subtopic_id])
-    @artifact = Artifact.create(media: params[:media], url: params[:url], topic_id: @topic.id, subtopic_id: @subtopic.id)
+    @artifact = Artifact.create(media: params[:media], url: params[:url], caption: params[:caption], topic_id: @topic.id, subtopic_id: @subtopic.id)
 
     if @artifact.save
       render json: @artifact
